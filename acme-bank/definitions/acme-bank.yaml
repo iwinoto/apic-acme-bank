@@ -1,0 +1,324 @@
+paths:
+  /branches:
+    post:
+      tags:
+        - branch
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: branch.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/branch'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/branch'
+      deprecated: false
+    put:
+      tags:
+        - branch
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: branch.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/branch'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/branch'
+      deprecated: false
+    get:
+      tags:
+        - branch
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: branch.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/branch'
+      deprecated: false
+  '/branches/{id}/exists':
+    get:
+      tags:
+        - branch
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'branch.exists__get_branches_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/branches/{id}':
+    head:
+      tags:
+        - branch
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'branch.exists__head_branches_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - branch
+      summary: Find a model instance by id from the data source.
+      operationId: branch.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/branch'
+      deprecated: false
+    delete:
+      tags:
+        - branch
+      summary: Delete a model instance by id from the data source.
+      operationId: branch.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - branch
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: branch.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/branch'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/branch'
+      deprecated: false
+  /branches/findOne:
+    get:
+      tags:
+        - branch
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: branch.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/branch'
+      deprecated: false
+  /branches/update:
+    post:
+      tags:
+        - branch
+      summary: Update instances of the model matched by where from the data source.
+      operationId: branch.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/branch'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /branches/count:
+    get:
+      tags:
+        - branch
+      summary: Count instances of the model matched by where from the data source.
+      operationId: branch.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /branches/change-stream:
+    post:
+      tags:
+        - branch
+      summary: Create a change stream.
+      operationId: branch.createChangeStream__post_branches_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - branch
+      summary: Create a change stream.
+      operationId: branch.createChangeStream__get_branches_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+definitions:
+  branch:
+    properties:
+      type:
+        type: string
+      id:
+        type: number
+        format: double
+    additionalProperties: false
+  x-any:
+    properties: {}
+swagger: '2.0'
+info:
+  x-ibm-name: acme-bank
+  version: 1.0.0
+  title: acme-bank
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
+  gateway: datapower-gateway

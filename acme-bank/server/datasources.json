@@ -1,0 +1,6 @@
+{
+  "bankDS": {
+    "name": "bankDS",
+    "connector": "memory"
+  }
+}

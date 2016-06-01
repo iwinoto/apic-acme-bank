@@ -1,0 +1,99 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/574e95c10cf2578284277470'
+  id: 574e95c10cf2578284277470
+  name: iwinotoau1ibmcom-bluemix-demo
+  status: active
+  orgType: apiProvider
+  displayName: iwinoto@au1.ibm.com (bluemix-demo)
+  externalOrgId: 6e921f65-5b48-4d97-a9ec-cea0d8a16a96
+  externalInviteOverride: 'https://new-console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: 6e921f65-5b48-4d97-a9ec-cea0d8a16a96
+  externalNativeOrgId: 6b08bf7f-79f2-42c2-ba26-56d92c274098
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+catalog:
+  id: 574e95c20cf2578284277477
+  shortName: sb
+  name: Sandbox
+  sandbox: true
+app:
+  metadata:
+    guid: 9f0d83ff-db77-4e9c-b55e-c882fc115ed8
+  entity:
+    guid: 9f0d83ff-db77-4e9c-b55e-c882fc115ed8
+    name: acme-bank
+    routes:
+      - guid: 2ca220e7-99d2-4db8-a68f-f30d038d35d1
+        host: apiconnect-9f0d83ff-db77-4e9c-b55e-c882fc115ed8
+        domain:
+          guid: 7c795314-549b-4d43-a004-e29129f49ab9
+          name: iwinotoau1ibmcom-bluemix-demo.apic.mybluemix.net
+      - guid: baf8cca3-b416-493b-9c0f-d6690638dd5b
+        host: acme-bank-iw
+        domain:
+          guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+          name: mybluemix.net
+    running_instances: 0
+    services: []
+    available_domains:
+      - guid: 25c793f5-88d3-4e8b-951b-83c8fb315757
+        name: us-sth.e1.net
+        owning_organization_guid: 6b08bf7f-79f2-42c2-ba26-56d92c274098
+      - guid: 7c795314-549b-4d43-a004-e29129f49ab9
+        name: iwinotoau1ibmcom-bluemix-demo.apic.mybluemix.net
+        owning_organization_guid: 6b08bf7f-79f2-42c2-ba26-56d92c274098
+      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+        name: mybluemix.net
+        router_group_guid: null
+    production: false
+    space_guid: 6e921f65-5b48-4d97-a9ec-cea0d8a16a96
+    stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
+    buildpack: null
+    detected_buildpack: 'SDK for Node.js(TM) (ibm-node.js-4.4.4, buildpack-v3.4-20160518-1653)'
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STOPPED
+    version: 16dfb0dc-f213-4531-af4d-b9cd55431bce
+    command: null
+    console: true
+    debug: null
+    staging_task_id: b1b9f847cd8747c0ab7dc94eed1dd396
+    package_state: STAGED
+    health_check_type: port
+    health_check_timeout: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: false
+    docker_image: null
+    package_updated_at: '2016-06-01T08:31:16Z'
+    detected_start_command: ./vendor/initial_startup.rb
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    ports: null
+id: d431c011-528c-4146-b298-426b2eb82199
+target: 1.0.0
+versionOptions:
+  inplaceUpdate: true
+publishApp: true
+publishProducts: false
+specificProducts: true
+workspaceDir:
+  path: /Users/iwinoto/git/apic-acme-bank/acme-bank
+products:
+  - info:
+      name: acme-bank
+      title: acme-bank
+      version: 1.0.0
+    updatedAt: '2016-06-01T07:36:55.000Z'
+    file: >-
+      /Users/iwinoto/git/apic-acme-bank/acme-bank/definitions/acme-bank-product.yaml
+    selected: true
